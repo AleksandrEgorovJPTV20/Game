@@ -19,8 +19,10 @@ public class Game {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Программа задумала число от 0 до 9, отгадай какое?: ");
-        int attempt = 0;
-        for (int i = 0; i < 5; i++) {
+        int attempt = 4;
+        //for (int i = 0; i < 5; i++) {
+        int i = 0;
+        while (true){
             int number = random.nextInt(10);
             //System.out.print(number); для проверки
             int userNumber = scanner.nextInt();
@@ -29,13 +31,13 @@ public class Game {
                 break;
             }
             else
-                if(attempt < 4){
+                if(i < attempt){
                     System.out.println("Неправильно, попробуйте ещё раз:");   
                 }
                 else{
                     System.out.println("Вы проиграли!");   
                 }
+                i++;
             }
-            attempt++;
         }
     }
