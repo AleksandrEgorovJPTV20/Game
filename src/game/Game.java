@@ -37,6 +37,7 @@ public class Game {
                 
                 else {
                     System.out.println(":(, проиграл, задумано: "+number);
+                    break;
                 }
               
             }
