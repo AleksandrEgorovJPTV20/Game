@@ -22,7 +22,7 @@ public class Game {
         int attempt = 4;
         //for (int i = 0; i < 5; i++) {
         int i = 0;
-        while (true){
+        do{
             int number = random.nextInt(10);
             //System.out.print(number); для проверки
             int userNumber = scanner.nextInt();
@@ -38,6 +38,6 @@ public class Game {
                     System.out.println("Вы проиграли!");   
                 }
                 i++;
-            }
+        }while(true);
         }
     }
