@@ -18,15 +18,24 @@ public class Game {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
-        int number = random.nextInt(10);
-        //System.out.print(number); для проверки
         System.out.println("Программа задумала число от 0 до 9, отгадай какое?: ");
-        int userNumber = scanner.nextInt();
-        if (userNumber == number) {
-            System.out.println("Вы угодали число!");
+        int attempt = 0;
+        for (int i = 0; i < 5; i++) {
+            int number = random.nextInt(10);
+            //System.out.print(number); для проверки
+            int userNumber = scanner.nextInt();
+            if (userNumber == number) {
+                System.out.println("Вы угодали число!");
+                break;
+            }
+            else
+                if(attempt < 4){
+                    System.out.println("Неправильно, попробуйте ещё раз:");   
+                }
+                else{
+                    System.out.println("Вы проиграли!");   
+                }
+            }
+            attempt++;
         }
-        else
-            System.out.println("Вы неправильно угодали число!");
     }
-    
-}
